@@ -1,7 +1,7 @@
 import classes from "./HeaderBar.module.css"
-const HeaderBar = () => {
+const HeaderBar = (props) => {
     return (
-        <div className={classes["header-bar-container"]}>
+        <div className={`${classes["header-bar-container"]} ${props.className}`}>
             <div className={classes["header-bar-cover"]}>
                 <div className={classes["shop-logo"]}>
                     <div className={classes["logo"]}>

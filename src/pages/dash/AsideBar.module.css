@@ -9,9 +9,7 @@
     height: 100%;
 }
 
-
-
-.top-actions {
+.aside-bar-top-actions {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,9 +18,7 @@
     height: fit-content;
 }
 
-
-
-.bottom-actions {
+.aside-bar-bottom-actions {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -30,7 +26,7 @@
     width: 100%;
 }
 
-.bottom-action {
+.aside-bar-bottom-action {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -38,7 +34,7 @@
     cursor: pointer;
 }
 
-.top-action {
+.aside-bar-top-action {
     color: #ffffff;
     text-align: center;
     display: flex;
@@ -53,6 +49,13 @@
     /* border: 1px solid red; */
 }
 
-.top-action:hover {
+.aside-bar-top-action:hover {
     background-color: #001b32;
+}
+
+@media screen and (max-width:820px) {
+    .aside-bar-top-action {
+        font-size: 6rem;
+        height: 15%;
+    }
 }

@@ -12,6 +12,17 @@
 }
 
 .aside-bar-dash-config {
-    width: 5%;
-    height: 90% !important;
+    width: 8%;
+    height: 85% !important;
+}
+
+.header-bar-dash-config {
+    height: 15%;
+}
+
+@media screen and (max-width:820px) {
+    .aside-bar-dash-config {
+        width: 17%;
+        height: 85% !important;
+    }
 }
