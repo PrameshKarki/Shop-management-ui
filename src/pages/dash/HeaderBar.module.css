@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;600&family=Lato:wght@100;300&family=Oswald:wght@300;400;500&display=swap');
+
+.header-bar-container {
+    height: 10%;
+    width: fit-content;
+    background-color: #001529;
+    width: 100%;
+
+}
+
+.header-bar-cover {
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* border: 5px solid yellow; */
+}
+
+.shop-logo {
+    flex: 1;
+    /* border: 2px solid green; */
+    height: 100%;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0rem 0rem .5rem 0rem;
+    padding: .5rem;
+}
+
+.logo {
+    color: #ffffff;
+    background-color: #D00F0F;
+    height: 95%;
+    width: 95%;
+    font-weight: bolder;
+    font-size: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+
+}
+
+.shop-info {
+    flex: 22;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: .5rem;
+    margin-left: 1rem;
+}
+
+.shop-info div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.shop-name {
+    height: 49%;
+    font-weight: bold;
+    font-size: 2.5rem;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+}
+
+.shop-address {
+    height: 49%;
+    font-family: 'Lato', sans-serif;
+
+}
