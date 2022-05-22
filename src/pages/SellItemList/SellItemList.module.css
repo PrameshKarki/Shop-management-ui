@@ -1,0 +1,19 @@
+.sell-item-list-container {
+    background-color: gainsboro;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sell-item-list-cover {
+    width: 99%;
+    height: 99%;
+    font-family: 'Inter', sans-serif;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: .5rem;
+}

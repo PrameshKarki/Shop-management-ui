@@ -1,4 +1,4 @@
-import Dash from "./pages/dash/Dashboard"
+import Dash from "./pages/Dash/Dashboard"
 import './App.css';
 
 function App() {

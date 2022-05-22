@@ -1,0 +1,33 @@
+.menu-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0rem 0rem 2px 0rem;
+    cursor: pointer;
+    padding: 0rem 1rem 0rem 1rem;
+}
+
+.menu-item-row:hover {
+    background-color: #e3e3e3;
+}
+
+.menu-item-row>div {
+    font-size: 2rem;
+    text-align: left;
+    flex: 7;
+}
+
+.postfix-items {
+    flex: 1 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.postfix-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+
+}

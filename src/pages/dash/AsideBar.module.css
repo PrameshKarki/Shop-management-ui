@@ -4,9 +4,9 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: .5rem;
+    /* padding: .5rem; */
     background-color: #001529;
-    height: 100%;
+    overflow: hidden;
 }
 
 .aside-bar-top-actions {
@@ -44,7 +44,7 @@
     width: 100%;
     height: 10%;
     border-bottom: 1px solid rgb(85, 85, 85);
-    padding: .5rem;
+    /* padding: .5rem; */
     cursor: pointer;
     /* border: 1px solid red; */
 }
@@ -58,4 +58,8 @@
         font-size: 6rem;
         height: 15%;
     }
+}
+
+.batch-active {
+    background: linear-gradient(90deg, #001529 50%, #FFFFFF 279.02%);
 }

@@ -1,4 +1,4 @@
-.add-expense-container {
+.add-menu-item-container {
     height: 100%;
     width: 100%;
     display: flex;
@@ -6,13 +6,14 @@
     align-items: center;
 }
 
-.add-expense-cover {
+.add-menu-item-cover {
     width: 99%;
     height: 99%;
     font-size: 3rem;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+
 }
 
 form {
@@ -65,18 +66,19 @@ form {
     padding: .5rem;
 }
 
-.expense-items-display {
+.menu-items-display {
     background: rgb(232, 232, 232);
     width: 95%;
     margin: 1rem 0rem 0rem 0rem;
     max-height: 45%;
+    /* border: 3px solid blue; */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
-.expense-items-display-cover {
+.menu-items-display-cover {
     height: 100%;
     width: 95%;
     margin: auto;

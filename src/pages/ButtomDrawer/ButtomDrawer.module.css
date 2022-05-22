@@ -1,0 +1,173 @@
+.bottom-slide-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255, 97, 29, 0.76) -186.49%, #001529 100%);
+    background-attachment: initial;
+    margin: auto;
+}
+
+.bottom-slide-container-cover {
+    width: 98%;
+    margin: auto;
+}
+
+.bottom-slide-header {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.price-display {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 1rem 0rem 1rem;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.total-price-text {
+    margin-left: 2rem;
+}
+
+.total-price {
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+
+
+.bottom-slide-header-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.bottom-slide-header-action {
+    color: white;
+    padding: .1rem 1rem .1rem 1rem;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.items-list {
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0rem 0rem .2rem 0rem;
+    font-size: 1.5rem;
+    padding: 0rem 1rem 0rem 1rem;
+
+}
+
+.item:hover {
+    background-color: #001120;
+}
+
+.item p {
+    margin: 0rem .3rem 0rem .3rem;
+    flex: auto;
+    text-align: left;
+    flex: 1;
+}
+
+.unit-price-item-qty {
+    flex: 2;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
+.item div p {
+    margin: 0rem .3rem 0rem .3rem;
+    flex: auto;
+}
+
+form {
+    background: transparent;
+    width: 80%;
+}
+
+
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: .5rem 0rem 0rem 0rem;
+}
+
+.form-action {
+    margin: 0rem .5rem 0rem 0rem;
+}
+
+.form-action button {
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    padding: .5rem 1rem .5rem 1rem;
+    font-size: 2rem;
+}
+
+.receit button {
+    background-color: #219653;
+}
+
+.receit button:hover {
+    background-color: #049342;
+}
+
+.pay button {
+    background-color: #FF611D;
+
+}
+
+.pay button:hover {
+    background: #f5530d;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-input {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0rem 0rem .5rem 0rem
+}
+
+.form-input label {
+    margin: 0rem 1rem 0rem 0rem;
+    font-size: 1.5rem;
+}
+
+.form-input input {
+    border: 1px solid white;
+    background: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 5px;
+}

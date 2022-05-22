@@ -1,0 +1,26 @@
+.sell-item-gride-container {
+    background-color: gainsboro;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sell-item-gride-cover {
+    width: 99%;
+    height: 99%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1rem;
+    font-family: 'Inter', sans-serif;
+    overflow-y: auto;
+}
+
+@media screen and (max-width:820px) {
+
+    .sell-item-gride-cover {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
