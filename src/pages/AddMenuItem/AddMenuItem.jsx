@@ -4,47 +4,44 @@ import MenuItemRow from "./MenuItemRow";
 import { InputNumber } from 'antd';
 import { Button } from 'antd';
 import 'antd/dist/antd.css';
+import { useSelector, useDispatch } from "react-redux";
+import { menuActions } from "../../store/index";
+import { v4 as uuid } from 'uuid';
+
 import classes from "./AddMenuItem.module.css";
-
-
 const AddMenuItem = () => {
+    const unique_temp_id = uuid();
+    const menu = useSelector(state => state.menu);
+    const dispatch = useDispatch();
     const [itemName, setItemName] = useState('');
-    const [itemQuantity, setItemQuantity] = useState('');
-    const [itemPrice, setItemPrice] = useState(0);
+    const [itemPrice, setItemPrice] = useState();
+    // console.log("from AddMenuItem:", menu);
     const itemNameChangeHandler = (newItemName) => {
         setItemName(newItemName);
-        console.log("item Name changed:" + newItemName);
-    }
-    const itemQuantityChangeHandler = (newItemQuantity) => {
-        setItemQuantity(newItemQuantity);
-        console.log("item quantity changes:" + newItemQuantity);
     }
     const itemPriceChangeHandler = (value) => {
         setItemPrice(value);
-        console.log("from individual:" + value);
     }
-    const formSubmitHandler = (e) => {
-        e.preventDefault();
-        console.log(itemName);
-        console.log(itemPrice);
-        console.log(itemQuantity);
-    }
-
-
-
     const dummyMenuItem = [{ "itemName": "Lassi", "price": "Rs 100" }, { "itemName": "Samosa", "price": "Rs 25" }, { "itemName": "Coldrinks", "price": "Rs 50" }, { "itemName": "Milk Tea", "price": "Rs 20" }, { "itemName": "Panipuri", "price": " Rs 50" }, { "itemName": "Samosa Chaat", "price": " Rs 120" }, { "itemName": "DahiPuri", "price": " Rs 120" }, { "itemName": "Chocolate Puri", "price": " Rs 120" }, { "itemName": "Laphing", "price": " Rs 120" }]
+
     // we have to extract object array to provide the options
     const options = [];
     dummyMenuItem.forEach(item => {
         options.push({ "label": item.itemName, "value": item.itemName });
     });
-    const submitButtonClickHandler = () => {
-        console.log("submitted!");
+
+    const formSubmitHandler = (e) => {
+        e.preventDefault();
+        // for the id of the item we use temporary id approach in which we provide temporary id to the item which is sent to server, that temporary id is replaced by server and stored to  database.
+        dispatch(menuActions.addMenuItem({ "id": unique_temp_id, "itemName": itemName, "price": itemPrice }));
+        //initialize input fields
+        setItemName("");
+        setItemPrice("");
     }
     return (
         <div className={classes["add-menu-item-container"]}>
             <div className={classes["add-menu-item-cover"]}>
-                <h6>Add Menu Item</h6>
+                <h6>Add menu item</h6>
                 <form onSubmit={formSubmitHandler}>
                     <div className={classes["form-fields"]}>
                         <div className={classes["form-field"]}>
@@ -61,15 +58,14 @@ const AddMenuItem = () => {
                     </div>
                     <div className={classes["form-actions"]}>
                         <div className={classes["form-action"]}>
-                            <Button type="primary" onClick={submitButtonClickHandler} size='large'>Add menu item</Button>
+                            <Button type="primary" onClick={formSubmitHandler} size='large'>Add menu item</Button>
                         </div>
                     </div>
                 </form>
                 <div className={classes["menu-items-display"]}>
                     <div className={classes["menu-items-display-cover"]}>
-                        {dummyMenuItem.map((menuItem, index) => <MenuItemRow key={index} itemName={menuItem.itemName} price={menuItem.price} />
+                        {menu.menuItems.map((menuItem, index) => <MenuItemRow key={menuItem.id} id={menuItem.id} itemName={menuItem.itemName} price={menuItem.price} />
                         )}
-
                     </div>
                 </div>
             </div>

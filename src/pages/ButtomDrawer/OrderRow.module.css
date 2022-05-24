@@ -1,0 +1,36 @@
+.item {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0rem 0rem .2rem 0rem;
+    font-size: 1.5rem;
+    padding: 0rem 1rem 0rem 1rem;
+
+}
+
+.item:hover {
+    background-color: #001120;
+}
+
+.item p {
+    margin: 0rem .3rem 0rem .3rem;
+    flex: auto;
+    text-align: left;
+    flex: 1;
+}
+
+.unit-price-item-qty {
+    flex: 2;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
+.item div p {
+    margin: 0rem .3rem 0rem .3rem;
+    flex: auto;
+}

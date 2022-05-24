@@ -1,0 +1,68 @@
+form {
+    background: transparent;
+    width: 80%;
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: .5rem 0rem 0rem 0rem;
+}
+
+.form-action {
+    margin: 0rem .5rem 0rem 0rem;
+}
+
+.form-action button {
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    padding: .5rem 1rem .5rem 1rem;
+    font-size: 2rem;
+}
+
+.receit button {
+    background-color: #219653;
+}
+
+.receit button:hover {
+    background-color: #049342;
+}
+
+.pay button {
+    background-color: #FF611D;
+
+}
+
+.pay button:hover {
+    background: #f5530d;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-input {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0rem 0rem .5rem 0rem
+}
+
+.form-input label {
+    margin: 0rem 1rem 0rem 0rem;
+    font-size: 1.5rem;
+}
+
+.form-input input {
+    border: 1px solid white;
+    background: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 5px;
+}
