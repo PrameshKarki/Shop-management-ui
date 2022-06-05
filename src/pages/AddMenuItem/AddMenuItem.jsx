@@ -32,6 +32,27 @@ const AddMenuItem = () => {
     const menu = useSelector(state => state.menu);
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        if (menu.length)
+            return
+        fetch('http://localhost:3000/menu/get', {
+            method: "GET",
+            header: {
+                "Content-Type": "application/json"
+            }
+        }).then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error("Error while fetching menu items.");
+        }).then(json => {
+            json.menu.forEach(item => {
+                dispatch(menuActions.addMenuItem({ "id": item.id, "itemName": item.itemName, "price": item.price, "quantity": 0 }));
+            })
+        });
+    }, [menu, dispatch]);
+
+
     const dummyMenuItem = [{ "itemName": "Lassi", "price": "Rs 100" }, { "itemName": "Samosa", "price": "Rs 25" }, { "itemName": "Coldrinks", "price": "Rs 50" }, { "itemName": "Milk Tea", "price": "Rs 20" }, { "itemName": "Panipuri", "price": " Rs 50" }, { "itemName": "Samosa Chaat", "price": " Rs 120" }, { "itemName": "DahiPuri", "price": " Rs 120" }, { "itemName": "Chocolate Puri", "price": " Rs 120" }, { "itemName": "Laphing", "price": " Rs 120" }]
 
     const options = [];
@@ -41,8 +62,6 @@ const AddMenuItem = () => {
 
     const formSubmitHandler = (e) => {
         e.preventDefault();
-
-        // *for the id of the item we use temporary id approach in which we provide temporary id to the item which is sent to server, that temporary id is replaced by server and stored to  database.
 
         notification("info", { "message": "Loading" });
         fetch('http://localhost:3000/menu/add', {

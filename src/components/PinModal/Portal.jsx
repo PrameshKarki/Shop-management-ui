@@ -4,7 +4,6 @@ import classes from "./Portal.module.css";
 import React from "react";
 import ReactDOM from "react-dom";
 const Modal = (props) => {
-    console.log("portal hit")
     return (
         < React.Fragment>
             {ReactDOM.createPortal(<Overlay

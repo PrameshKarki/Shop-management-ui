@@ -8,11 +8,9 @@ const expenseSlice = createSlice({
             !state.expenseItems.length ? state.expenseItems.push(action.payload) : (() => {
                 const objectIndex = state.expenseItems.findIndex(item => item.itemName === action.payload.itemName);
                 objectIndex < 0 ? state.expenseItems.push(action.payload) : (() => {
-                    console.log("inside add expense item.");
                     state.expenseItems[objectIndex].price = action.payload.price;
                     state.expenseItems[objectIndex].quantity = action.payload.quantity;
                 })();
-                console.log("expense Items: ", current(state.expenseItems));
             })();
             //also save to server;
         },

@@ -18,9 +18,7 @@ const ExpenseItemRow = (props) => {
     // !when this component get's reevaluated the useEffect get executed. So, that's a bug.
 
     // useEffect(() => {
-    //     console.log("inside delete expense.");
     //     if (isInitial) {
-    //         console.log("inside is initial.....");
     //         isInitial = !isInitial;
     //         return;
     //     }
@@ -38,7 +36,6 @@ const ExpenseItemRow = (props) => {
     //         throw new Error("Error while deleting expense from server.");
     //     }).then(json => {
     //         notification("info", { 'message': 'Success', 'description': 'Successfully deleted.' });
-    //         console.log("from delete ui part", json);
     //         dispatch(expenseActions.deleteExpenseItem({ "id": props.id, "itemName": props.itemName, "quantity": props.quantity, "price": props.price }))
     //     }).catch(err => {
     //         notification("error", { 'message': 'Error', 'description': "Server error!" });
@@ -67,7 +64,6 @@ const ExpenseItemRow = (props) => {
             throw new Error("Error while deleting expense from server.");
         }).then(json => {
             notification("success", { 'message': 'Success', 'description': 'Successfully deleted.' });
-            console.log("from delete ui part", json);
             dispatch(expenseActions.deleteExpenseItem({ "id": props.id, "itemName": props.itemName, "quantity": props.quantity, "price": props.price }))
         }).catch(err => {
             notification("error", { 'message': 'Error', 'description': "Server error!" });

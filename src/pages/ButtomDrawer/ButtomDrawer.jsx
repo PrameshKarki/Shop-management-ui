@@ -18,13 +18,8 @@ const ButtomDrawer = () => {
         return num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
     }
     useEffect(() => {
-        // effect
-        console.log("useEffect in Execution.");
         order.orderItems.forEach((item) => { price += +item.unitPrice * +item.quantity });
         setTotalPayablePrice(price);
-        return () => {
-            console.log("cleanUp in Execution.");
-        };
     }, [order]);
 
     return (

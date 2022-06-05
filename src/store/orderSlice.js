@@ -15,14 +15,12 @@ const orderSlice = createSlice({
                         :
                         state.orderItems[objectIndex].quantity++;
                 })();
-            console.log("from order slice add item reducer", current(state).orderItems);
         },
         removeOrderItem(state, action) {
             !state.orderItems.length ? (() => { })()
                 :
                 (() => {
                     const objectIndex = current(state).orderItems.findIndex(item => item.id === action.payload.id);
-                    console.log("Object Index:", objectIndex);
                     objectIndex < 0 ? (() => { })()
                         :
                         (() => {
@@ -30,7 +28,6 @@ const orderSlice = createSlice({
                                 state.orderItems[objectIndex].quantity = current(state).orderItems[objectIndex].quantity - 1;
                         })();
                 })();
-            console.log("from order slice remove item reducer", current(state).orderItems);
 
         },
         resetOrders(state) {

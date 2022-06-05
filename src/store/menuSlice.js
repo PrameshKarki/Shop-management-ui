@@ -19,12 +19,10 @@ const menuSlice = createSlice({
             })();
         },
         incrQuantity(state, action) {
-            console.log("inside incrQuantity action----");
             const objectIndex = current(state).menuItems.findIndex(item => item.id === action.payload.id);
             objectIndex < 0 ? (() => { })() : state.menuItems[objectIndex].quantity++;
         },
         decrQuantity(state, action) {
-            console.log("inside decrQuantity action----");
             const objectIndex = current(state).menuItems.findIndex(item => item.id === action.payload.id);
             objectIndex < 0 ? (() => { })() : state.menuItems[objectIndex].quantity--;
         }

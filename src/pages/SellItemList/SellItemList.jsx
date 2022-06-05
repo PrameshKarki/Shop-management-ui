@@ -8,7 +8,6 @@ const SellItemList = () => {
     const menu = useSelector(state => state.menu.menuItems);
     const dispatch = useDispatch();
     useEffect(() => {
-        console.log("inside fetch");
         if (menu.length)
             return;
 
@@ -18,9 +17,7 @@ const SellItemList = () => {
                 "Content-Type": "application/json"
             }
         }).then(response => {
-            console.log("inside first then.");
             if (response.ok) {
-                console.log("inside response ok then.");
                 return response.json();
             }
             throw new Error("Error while fetching menu items.");
