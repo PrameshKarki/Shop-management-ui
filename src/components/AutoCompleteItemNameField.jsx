@@ -10,6 +10,8 @@ export default function AutoCompleteItemNameField(props) {
             onSearch={props.onSearch}
             onChange={props.onChange}
             placeholder={props.placeHolder}
+            status={props.status}
+            onBlur={props.onBlur}
         />
     );
 }

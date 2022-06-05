@@ -1,0 +1,21 @@
+.fullscreenbutton {
+    font-size: 2.5rem;
+    color: rgb(242, 242, 242);
+    cursor: pointer;
+    margin-right: 5rem;
+    padding: .4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s ease;
+    border-radius: 5px;
+}
+
+.fullscreenbutton:hover {
+    background: linear-gradient(90deg, #001529 50%, #FFFFFF 279.02%);
+}
+
+.hide-fullscreen-btn {
+    display: none;
+    pointer-events: none;
+}

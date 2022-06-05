@@ -4,6 +4,7 @@ import { useState } from "react";
 import classes from './ItemCard.module.css';
 import { orderActions } from "../../store/index";
 import { useDispatch } from "react-redux";
+import { menuActions } from "../../store/index";
 
 var divBackground = {
     backgroundImage: "url(" + "../../Images/Dahi-Puri-3.jpg" + ")"
@@ -13,12 +14,16 @@ const ItemCard = (props) => {
     const dispatch = useDispatch();
     const [itemCount, setItemCount] = useState(0);
     const itemCardClickHandler = () => {
+        dispatch(menuActions.incrQuantity({ "id": props.id }));
         setItemCount(itemCount + 1);
         dispatch(orderActions.addOrderItem({ "id": props.id, "itemName": props.itemName, "unitPrice": props.unitPrice }))
     }
     const decreaseItemCountButtonClickHandler = (event) => {
         event.stopPropagation();
-        itemCount <= 0 ? setItemCount(0) : setItemCount(itemCount - 1);
+        itemCount <= 0 ? setItemCount(0) : (() => {
+            setItemCount(itemCount - 1);
+            dispatch(menuActions.decrQuantity({ "id": props.id })); //decrease the number if item in the menu;
+        })();
         dispatch(orderActions.removeOrderItem({ "id": props.id, "itemName": props.itemName, "unitPrice": props.unitPrice }))
     }
 
@@ -26,7 +31,7 @@ const ItemCard = (props) => {
         <div className={classes["item-card"]} onClick={itemCardClickHandler}>
             <div className={classes["card-cover"]}>
                 <div className={classes["item-count"]}>
-                    <p>{itemCount}</p>
+                    <p>{props.quantity}</p>
                 </div>
                 <div className={classes["image"]} style={divBackground}>
                 </div>

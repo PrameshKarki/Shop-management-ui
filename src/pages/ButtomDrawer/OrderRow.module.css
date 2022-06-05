@@ -28,6 +28,10 @@
     align-items: center;
 }
 
+.unit-price-item-qty p {
+    flex: 1;
+}
+
 
 
 .item div p {

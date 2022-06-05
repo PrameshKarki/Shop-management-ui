@@ -6,8 +6,8 @@
 }
 
 .dash-cover {
-    margin: .5rem;
-    /* border: 1px solid blue; */
+    /* margin: .5rem; */
+
     height: 99%;
     position: relative;
 }
@@ -18,7 +18,7 @@
 }
 
 .header-bar-dash-config {
-    height: 15%;
+    height: 9%;
 }
 
 @media screen and (max-width:820px) {

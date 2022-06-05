@@ -1,14 +1,14 @@
 import classes from "./OrderRow.module.css";
 const OrderRow = (props) => {
     return <div className={classes["item"]} >
-        <p>Item Name</p>
+        <p>{props.itemName}</p>
         <div className={classes["unit-price-item-qty"]} >
-            <p>UNIT PRICE</p>
+            <p>{props.unitPrice}</p>
             <p>X</p>
-            <p>ITEM QUANTITY</p>
+            <p>{props.quantity}</p>
         </div >
         <p>=</p>
-        <p>TOTAL PRICE</p>
+        <p>{props.unitPrice * props.quantity}</p>
     </div >
 }
 export default OrderRow;

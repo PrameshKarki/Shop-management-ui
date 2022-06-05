@@ -1,57 +1,40 @@
 import ItemListCard from "./ItemListCard"
 import classes from "./SellItemList.module.css";
-
-const dummyItemCardInfo = [
-    { "id": "1", "imageURL": "", "itemName": "Panipuri", "price": "240" },
-    { "id": "2", "imageURL": "", "itemName": "Dahipuri", "price": "240" },
-    { "id": "3", "imageURL": "", "itemName": "Chocklate Puri", "price": "240" },
-    { "id": "4", "imageURL": "", "itemName": "Chaat", "price": "240" },
-    { "id": "5", "imageURL": "", "itemName": "Milk Tea", "price": "20" },
-    { "id": "6", "imageURL": "", "itemName": "Cold Drink", "price": "50" },
-    { "id": "8", "imageURL": "", "itemName": "pizza", "price": "100" },
-    { "id": "8", "imageURL": "", "itemName": "burger", "price": "100" },
-    { "id": "10", "imageURL": "", "itemName": "laphing", "price": "100" },
-    { "id": "11", "imageURL": "", "itemName": "mix chaat", "price": "100" },
-    { "id": "12", "imageURL": "", "itemName": "black tea", "price": "100" },
-    { "id": "13", "imageURL": "", "itemName": "Bun", "price": "100" },
-    { "id": "14", "imageURL": "", "itemName": "Samosa", "price": "100" },
-    { "id": "15", "imageURL": "", "itemName": "Puff", "price": "100" },
-    { "id": "16", "imageURL": "", "itemName": "IceCream", "price": "100" }
-]
+import { useEffect } from "react";
+import { menuActions } from "../../store/index";
+import { useDispatch, useSelector } from "react-redux";
 
 const SellItemList = () => {
+    const menu = useSelector(state => state.menu.menuItems);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        console.log("inside fetch");
+        if (menu.length)
+            return;
+
+        fetch('http://localhost:3000/menu/get', {
+            method: "GET",
+            header: {
+                "Content-Type": "application/json"
+            }
+        }).then(response => {
+            console.log("inside first then.");
+            if (response.ok) {
+                console.log("inside response ok then.");
+                return response.json();
+            }
+            throw new Error("Error while fetching menu items.");
+        }).then(json => {
+            json.menu.forEach(item => {
+                dispatch(menuActions.addMenuItem({ "id": item.id, "itemName": item.itemName, "price": item.price }))
+            })
+        });
+    }, [menu, dispatch]);
     return (
         <div className={classes["sell-item-list-container"]}>
+            <h3>Menu</h3>
             <div className={classes["sell-item-list-cover"]}>
-                {dummyItemCardInfo.map((item, index) => <ItemListCard key={index} itemName={item.itemName} unitPrice={item.price} />)}
-                {/* <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard />
-                <ItemListCard /> */}
+                {menu ? menu.map((item, index) => <ItemListCard key={item.id} id={item.id} itemName={item.itemName} unitPrice={item.price} quantity={item.quantity} />) : <p>No items added in menu.</p>}
             </div>
         </div>
     );

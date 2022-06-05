@@ -1,4 +1,5 @@
-import classes from "./HeaderBar.module.css"
+import classes from "./HeaderBar.module.css";
+import FullScreenButton from "../../components/FullScreenButton";
 const HeaderBar = (props) => {
     return (
         <div className={`${classes["header-bar-container"]} ${props.className}`}>
@@ -12,7 +13,7 @@ const HeaderBar = (props) => {
                     <div className={classes["shop-name"]}><p>Chaat Station</p></div>
                     <div className={classes["shop-address"]}>Patan Dhoka, Lalitpur, Nepal</div>
                 </div>
-
+                <FullScreenButton />
             </div>
         </div >
     );

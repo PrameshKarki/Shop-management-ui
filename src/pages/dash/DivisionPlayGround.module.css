@@ -1,9 +1,10 @@
 .division-playground-container {
     position: absolute;
-    top: 16%;
+    top: 9.5%;
     left: 8.5%;
     height: 84%;
     width: 91.5%;
+    /* border: 10px solid blue; */
 }
 
 @media screen and (max-width:820px) {
